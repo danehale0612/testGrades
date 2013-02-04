@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head></head>
+
+<body>
+
+<script>
+var grades = [
+{name: 'Peter Venkam', grade: 73},
+{name: 'Ray Stanz', grade: 90},
+{name: 'Egon Spengler', grade: 99},
+{name: 'Winston Zeddmore', grade: 82},
+{name: 'Louis Tully', grade: 64},
+{name: 'Dana Barret', grade: 68},
+{name: 'Jenine Melnitz', grade: 60},
+{name: 'Slimer', grade: 34},
+{name: 'Gozer', grade: 100},
+{name: 'StayPuff MarshmellowMan', grade: 95},
+];
+
+var totalGrade = 0;
+var average;
+
+function averageGrade () {
+for (var i = 0; i < grades.length; i++) {
+	totalGrade += grades[i].grade;
+	} 
+	average = totalGrade / grades.length;
+	return average;
+};
+
+
+
+document.write("<p>Average Grade: "+averageGrade ()+"</p>");
+
+function letterGrade () {
+	if (average < 65) {
+		document.write("<p>Letter Grade: F</p>");
+	}
+	else if (average < 70) {
+		document.write("<p>Letter Grade: D</p>");
+	}
+	else if (average < 80) {
+		document.write("<p>Letter Grade: C</p>");
+	}
+	else if (average < 90) {
+		document.write("<p>Letter Grade: B</p>");
+	}
+	else {
+		document.write("<p>Letter Grade: A</p>");
+	}
+};
+
+letterGrade();
+
+</script>
+</body>
+</html>
