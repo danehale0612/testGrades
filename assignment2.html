@@ -7,52 +7,55 @@
 
 <script>
 var grades = [
-{name: 'Peter Venkam', grade: 73},
-{name: 'Ray Stanz', grade: 90},
-{name: 'Egon Spengler', grade: 99},
-{name: 'Winston Zeddmore', grade: 82},
-{name: 'Louis Tully', grade: 64},
-{name: 'Dana Barret', grade: 68},
-{name: 'Jenine Melnitz', grade: 60},
-{name: 'Slimer', grade: 34},
-{name: 'Gozer', grade: 100},
-{name: 'StayPuff MarshmellowMan', grade: 95},
+['Peter Venkam', 73],
+['Ray Stanz', 90],
+['Egon Spengler', 99],
+['Winston Zeddmore', 82],
+['Louis Tully', 64],
+['Dana Barret', 68],
+['Jenine Melnitz', 60],
+['Slimer', 34],
+['Gozer', 100],
+['StayPuff MarshmellowMan', 95],
 ];
 
-var totalGrade = 0;
-var average;
+
 
 function averageGrade () {
+	var totalGrade = 0;
 for (var i = 0; i < grades.length; i++) {
-	totalGrade += grades[i].grade;
+	totalGrade += grades[i][1];
 	} 
+	
 	average = totalGrade / grades.length;
 	return average;
 };
 
 
 
-document.write("<p>Average Grade: "+averageGrade ()+"</p>");
-
 function letterGrade () {
+	var average = averageGrade();
 	if (average < 65) {
-		document.write("<p>Letter Grade: F</p>");
+		return "F";
 	}
 	else if (average < 70) {
-		document.write("<p>Letter Grade: D</p>");
+		return "D";
 	}
 	else if (average < 80) {
-		document.write("<p>Letter Grade: C</p>");
+		return "C";
 	}
 	else if (average < 90) {
-		document.write("<p>Letter Grade: B</p>");
+		return "B";
 	}
 	else {
-		document.write("<p>Letter Grade: A</p>");
+		return "A";
 	}
 };
 
-letterGrade();
+
+document.write("<p>Average Grade: "+averageGrade ()+"</p>");
+
+document.write("Letter Grade: "+letterGrade());
 
 </script>
 </body>
